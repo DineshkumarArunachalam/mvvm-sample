@@ -1,2 +1,2 @@
 # mvvm-sample
-MVVM sample integration, databinding in recycler view
+MVVM sample integration, databinding ,live data sample demo integration
