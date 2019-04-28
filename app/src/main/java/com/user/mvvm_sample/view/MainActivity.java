@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
         AlbumViewModel albumViewModel= ViewModelProviders.of(this).get(AlbumViewModel.class);
 
+        albumViewModel.getBindText().setValue("sample text");
+        albumViewModel.getRetroPhotos();
         binding.setDataset(albumViewModel);
 
     }

@@ -2,6 +2,8 @@ package com.user.mvvm_sample.viewmodel;
 
 
 
+
+import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 
 import com.user.mvvm_sample.interfaces.Details;
@@ -19,7 +21,13 @@ import retrofit2.Response;
 public class AlbumViewModel extends ViewModel {
 
     private List<RetroPhoto> retroPhotos;
-    public String bindText="tttttt";
+    public MutableLiveData<String> bindText=new MutableLiveData<>();
+
+
+
+    public MutableLiveData<String> getBindText() {
+        return bindText;
+    }
 
     public List<RetroPhoto> getRetroPhotos() {
         if(retroPhotos==null) {
@@ -46,6 +54,7 @@ public class AlbumViewModel extends ViewModel {
           }
       });
 
+        getBindText().setValue("api status");
         return retroPhotos;
     }
 }
